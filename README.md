@@ -1,7 +1,7 @@
 
 ---
 
-# Metrics Extraction and Automation
+## Metrics Extraction and Automation
 
 This repository automates the extraction and analysis of metrics from a database and generates insights on search and click data. The pipeline calculates **Click-Through Rate (CTR)**, identifies **top-performing queries**, and detects **low-performing queries**, aiming to provide meaningful business insights.
 
@@ -63,9 +63,45 @@ DATABASE_URL=your_database_url
 
 Make sure to add any additional environment variables needed for your setup (e.g., API keys).
 
-### Step 5: Run the Pipeline
+> **Note:** This project is designed to work with **Supabase** as the backend SQL database. If you're using Supabase, ensure you have created a project and obtained your database URL and credentials. [Supabase Setup Documentation](https://supabase.com/docs/guides)
 
-Once the environment is set up, you can manually run the pipeline by executing the following command:
+### Step 5: Provide Your Own Data (Using `dumpdata.py`)
+
+The `dumpdata.py` script allows you to import your own sample data into the database. This is useful for testing or simulating the pipeline without needing real-world data initially. You can use this script to populate the `search_clicks` table with sample data.
+
+To run the `dumpdata.py` script:
+
+1. Open the `dumpdata.py` file located in the root directory.
+2. Modify the script to match the structure of your dataset, if needed. The script uses the `psycopg2` library to connect to the database and execute SQL queries. Example:
+
+```python
+import psycopg2
+from datetime import datetime
+
+    # Sample data to insert into the database (modify as needed)
+    data = [
+        ("2024-12-01", "query1", 1000, 200),  # Date, Query, Impressions, Clicks
+        ("2024-12-01", "query2", 1500, 300),
+        ("2024-12-01", "query3", 1200, 150),
+        ("2024-12-02", "query1", 1100, 250),
+        ("2024-12-02", "query2", 1400, 180),
+    ]
+    
+    #repalce your data
+   
+```
+
+3. Run the script to insert the sample data into your database:
+
+```bash
+python dumpdata.py
+```
+
+This will populate the `search_clicks` table with sample data that can be used to execute the pipeline and generate insights.
+
+### Step 6: Run the Pipeline
+
+Once the environment is set up and the data is in place, you can manually run the pipeline by executing the following command:
 
 ```bash
 python run_pipeline.py
@@ -73,7 +109,7 @@ python run_pipeline.py
 
 This will run the pipeline, calculate the metrics, and store the insights in the database.
 
-### Step 6: Automate the Pipeline (Scheduler)
+### Step 7: Automate the Pipeline (Scheduler)
 
 To automate the execution of the pipeline (e.g., on a daily basis), you can use **Task Scheduler** (for Windows), **cron jobs** (for Linux/MacOS), or a task scheduler library like **APScheduler** or **Celery**.
 
@@ -104,7 +140,7 @@ For **Windows**, you can use **Task Scheduler** to automate the script. Here's a
    python C:\path\to\your\project\run_pipeline.py
    ```
 
-### Step 7: Check Results
+### Step 8: Check Results
 
 The results of the analysis will be saved in the `search_insights` table in your database. The following columns will be available for review:
 
@@ -120,6 +156,7 @@ The results of the analysis will be saved in the `search_insights` table in your
 - Make sure you have **PostgreSQL** or another relational database set up with a table (`search_clicks`) that contains the search data.
 - You can modify the pipeline logic to suit your exact use case (e.g., change thresholds for low-performance queries).
 - This project can be further extended to include more metrics or integrate with other services.
+- **Supabase** is recommended for handling the database and executing SQL commands as it integrates seamlessly with Python using `psycopg2`. For setup details, visit [Supabase Documentation](https://supabase.com/docs/guides).
 
 ---
 
@@ -143,3 +180,5 @@ By following these steps, you'll be able to set up the **Metrics Extraction and 
 ---
 
 This guide should help users easily set up and automate the pipeline.
+
+---
