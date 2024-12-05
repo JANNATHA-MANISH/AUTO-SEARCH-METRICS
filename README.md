@@ -161,8 +161,8 @@ The results of the analysis will be saved in the `search_insights` table in your
 ---
 
 ### SAMPLE IMAGE AI GENERATED 
-![Gemini_Generated_Image_67g4s767g4s767g4](https://github.com/user-attachments/assets/a2c8aedf-f4d6-4f36-8b96-b9491bf557ff)
 
+![ctr_analysis](https://github.com/user-attachments/assets/f63d23a3-7dce-4413-a4f5-aa7895e4fd88)
 
 ---
 
