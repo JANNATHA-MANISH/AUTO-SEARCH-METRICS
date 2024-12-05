@@ -160,18 +160,9 @@ The results of the analysis will be saved in the `search_insights` table in your
 
 ---
 
-### Example Image Prompt for README
+### SAMPLE IMAGE AI GENERATED 
 
-If you'd like to add an image to your README, you can use an AI prompt to generate an image relevant to metrics automation.
-
-**Prompt for Image**:  
-"Create an image that represents the concept of data analysis and automation, with graphs, charts, and flowcharts depicting the calculation of metrics like CTR (Click-Through Rate) and performance insights."
-
-This image can be added to your README file like this:
-
-```markdown
-![Metrics Automation](link-to-your-image.png)
-```
+![ctr_analysis](https://github.com/user-attachments/assets/f63d23a3-7dce-4413-a4f5-aa7895e4fd88)
 
 ---
 
