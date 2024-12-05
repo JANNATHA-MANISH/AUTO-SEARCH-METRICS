@@ -16,9 +16,14 @@ def run_pipeline():
     for date, ctr in average_ctr_results:
         print(f"{date} - {ctr:.4f}") """
     
-        # Display the results in a readable format
-    print(f"Overall Average CTR: {average_ctr_results:.4f}\n")  # Display overall average CTR
-   
+   # Calculate overall average CTR from the results
+    if average_ctr_results:
+        overall_average_ctr = sum(ctr for _, ctr in average_ctr_results) / len(average_ctr_results)
+    else:
+        overall_average_ctr = 0.0
+
+    # Display the overall average CTR
+    print(f"Overall Average CTR: {overall_average_ctr:.4f}")
 
     print("\nTop 5 Search Queries with Highest CTR:")
     # Display only the top 5 queries with highest CTR
