@@ -2,6 +2,13 @@
 ---
 
 ## Metrics Extraction and Automation
+---
+
+
+
+![ctr_analysis](https://github.com/user-attachments/assets/f63d23a3-7dce-4413-a4f5-aa7895e4fd88)
+
+---
 
 This repository automates the extraction and analysis of metrics from a database and generates insights on search and click data. The pipeline calculates **Click-Through Rate (CTR)**, identifies **top-performing queries**, and detects **low-performing queries**, aiming to provide meaningful business insights.
 
@@ -158,13 +165,7 @@ The results of the analysis will be saved in the `search_insights` table in your
 - This project can be further extended to include more metrics or integrate with other services.
 - **Supabase** is recommended for handling the database and executing SQL commands as it integrates seamlessly with Python using `psycopg2`. For setup details, visit [Supabase Documentation](https://supabase.com/docs/guides).
 
----
 
-### SAMPLE IMAGE AI GENERATED 
-
-![ctr_analysis](https://github.com/user-attachments/assets/f63d23a3-7dce-4413-a4f5-aa7895e4fd88)
-
----
 
 By following these steps, you'll be able to set up the **Metrics Extraction and Automation** system, run it locally or automatically, and check your insights via the database or API.
 
